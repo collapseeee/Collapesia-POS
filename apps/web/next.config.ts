@@ -13,6 +13,20 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  rewrites() {
+    return {
+      fallback: [
+        {
+          source: "/api/:path*",
+          destination: `${process.env.API_URL}/api/:path*`,
+        },
+      ],
+    };
+  },
+  experimental: {
+    proxyClientMaxBodySize: "100mb",
+    proxyTimeout: 120_000,
+  },
 };
 
 export default nextConfig;
