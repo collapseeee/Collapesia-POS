@@ -1,0 +1,17 @@
+{
+  "name": "collapesia-pos-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel --filter api --filter collapesia-pos dev",
+    "dev:web": "pnpm --filter collapesia-pos dev",
+    "dev:api": "pnpm --filter api dev",
+    "dev:contracts": "pnpm --filter @collapesia/contracts dev",
+    "build": "pnpm --filter @collapesia/contracts build && pnpm --filter api build && pnpm --filter collapesia-pos build",
+    "build:contracts": "pnpm --filter @collapesia/contracts build",
+    "build:api": "pnpm --filter api build",
+    "build:web": "pnpm --filter collapesia-pos build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm --filter api test"
+  }
+}
